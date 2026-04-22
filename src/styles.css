@@ -63,16 +63,39 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   color: inherit;
 }
 
 .brand-logo {
-  width: 78px;
-  height: 78px;
+  width: 64px;
+  height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0;
+  display: block;
+}
+
+.brand-copy {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-title {
+  color: #2d669e;
+  font-size: clamp(1.75rem, 2.2vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+.brand-subtitle {
+  display: inline-block;
+  color: #6e7d88;
+  font-size: clamp(1.1rem, 1.5vw, 1.55rem);
+  border-top: 2px solid #9eacb7;
+  padding-top: 3px;
+  line-height: 1;
 }
 
 .brand small {
@@ -772,6 +795,14 @@ body {
   .top-phone {
     width: 100%;
     text-align: center;
+  }
+
+  .brand-title {
+    font-size: 1.45rem;
+  }
+
+  .brand-subtitle {
+    font-size: 1rem;
   }
 
   .whatsapp-float {

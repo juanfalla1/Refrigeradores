@@ -102,10 +102,10 @@ function App() {
       <header className="header">
         <div className="container nav nav-primary">
           <a href="#home" className="brand">
-            <img src={logoImg} alt="Garcia Clima Service" className="brand-logo" />
-            <span>
-              <strong>Garcia Clima Service</strong>
-              <small>Installazione Condizionatore</small>
+            <img src={logoImg} alt="Garcia Clima Servizi" className="brand-logo" />
+            <span className="brand-copy">
+              <strong className="brand-title">Garcia Clima Servizi</strong>
+              <small className="brand-subtitle">Installazione Condizionatori</small>
             </span>
           </a>
 
@@ -460,13 +460,13 @@ function App() {
         rel="noreferrer"
         aria-label="Contattaci su WhatsApp"
       >
-        WhatsApp
+        Scrivici su WhatsApp
       </a>
 
       <footer className="footer">
         <div className="container footer-top">
           <div className="footer-logo-box">
-            <img src={logoImg} alt="Garcia Clima Service" className="footer-logo" />
+            <img src={logoImg} alt="Garcia Clima Servizi" className="footer-logo" />
           </div>
 
           <div>
