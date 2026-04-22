@@ -1,0 +1,9 @@
+_iub.csRC = { consApiKey: 'gLxTlSxi1WOMEz4pafTdHksyT6XzmNpF', publicId: 'c4a8967d-3f47-44a2-ab42-5412a5b02979', floatingGroup: false };
+_iub.csEnabled = true;
+_iub.csPurposes = [4,1,2,5,3];
+_iub.cpUpd = 1762759624;
+_iub.csFeatures = {"geolocation_setting":false,"cookie_solution_white_labeling":1,"rejection_recovery":false,"full_customization":true,"multiple_languages":"it","mobile_app_integration":false};
+_iub.csT = null;
+_iub.googleConsentModeV2 = true;
+_iub.totalNumberOfProviders = 3;
+_iub.csSiteConf = {"askConsentAtCookiePolicyUpdate":true,"emailMarketing":{"theme":"dark"},"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":4302775,"storage":{"useSiteId":true},"whitelabel":false,"cookiePolicyId":97292934,"lang":"it","banner":{"acceptButtonDisplay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-top-center","showTitle":false}};
