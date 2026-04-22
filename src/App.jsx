@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import logoImg from "../logo.png";
+import headerLogoImg from "../logo4.png";
+import footerLogoImg from "../logo.png";
 import heroLeft from "../imagen del header.png";
 import heroRight from "../imagen 2.png";
 import faqBanner from "../Climafresco _ Installazione Condizionatore_files/Screenshot-2024-03-04-154334.png";
@@ -100,16 +101,16 @@ function App() {
   return (
     <>
       <header className="header">
-        <div className="container nav nav-primary">
+        <div className="container nav nav-primary nav-main-row">
           <a href="#home" className="brand">
-            <img src={logoImg} alt="Garcia Clima Servizi" className="brand-logo" />
-            <span className="brand-copy">
-              <strong className="brand-title">Garcia Clima Servizi</strong>
-              <small className="brand-subtitle">Installazione Condizionatori</small>
-            </span>
+            <img src={headerLogoImg} alt="Garcia Clima Servizi" className="brand-logo" />
           </a>
 
-          <nav>
+          <a className="search-link" href="#contatti" aria-label="Vai ai contatti">
+            <span className="search-icon" aria-hidden="true" />
+          </a>
+
+          <nav className="header-inline-nav">
             <ul className="menu">
               <li><a href="#home">Home</a></li>
               <li><a href="#chi-siamo">Chi Siamo</a></li>
@@ -134,23 +135,12 @@ function App() {
               </li>
               <li><a href="#assistenza">Assistenza</a></li>
               <li><a href="#blog">Blog</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div className="container nav nav-secondary">
-          <a className="search-link" href="#contatti" aria-label="Vai ai contatti">
-            <span className="search-icon" aria-hidden="true" />
-          </a>
-          <nav>
-            <ul className="menu menu-secondary">
               <li><a href="#lavora-con-noi">Lavora con Noi</a></li>
               <li><a href="#contatti">Contatti</a></li>
             </ul>
           </nav>
 
-          <a href="#contatti" className="btn btn-orange">Richiedi un preventivo gratuito</a>
-          <a href="tel:+393928279407" className="top-phone">392 827 9407</a>
+          <a href="#contatti" className="btn btn-orange header-cta">Richiedi un preventivo gratuito</a>
         </div>
       </header>
 
@@ -466,7 +456,7 @@ function App() {
       <footer className="footer">
         <div className="container footer-top">
           <div className="footer-logo-box">
-            <img src={logoImg} alt="Garcia Clima Servizi" className="footer-logo" />
+            <img src={footerLogoImg} alt="Garcia Clima Servizi" className="footer-logo" />
           </div>
 
           <div>

@@ -46,6 +46,11 @@ body {
   border-bottom: 1px solid #d8eaf6;
 }
 
+.nav-main-row {
+  min-height: 132px;
+  gap: 14px;
+}
+
 .nav-secondary {
   min-height: 62px;
 }
@@ -63,39 +68,39 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   text-decoration: none;
   color: inherit;
 }
 
 .brand-logo {
-  width: 64px;
+  width: 190px;
+  max-width: min(32vw, 190px);
   height: auto;
   object-fit: contain;
   border-radius: 0;
   display: block;
+  box-shadow: none;
 }
 
-.brand-copy {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 3px;
+.header-inline-nav {
+  flex: 1;
+  min-width: 0;
 }
 
-.brand-title {
-  color: #2d669e;
-  font-size: clamp(1.75rem, 2.2vw, 2.2rem);
-  line-height: 1;
-  letter-spacing: 0.2px;
+.header-inline-nav .menu {
+  gap: 20px;
+  justify-content: flex-start;
 }
 
-.brand-subtitle {
-  display: inline-block;
-  color: #6e7d88;
-  font-size: clamp(1.1rem, 1.5vw, 1.55rem);
-  border-top: 2px solid #9eacb7;
-  padding-top: 3px;
-  line-height: 1;
+.header-inline-nav .menu a,
+.header-inline-nav .dropdown-trigger {
+  font-size: 0.98rem;
+}
+
+.header-cta {
+  white-space: nowrap;
+  margin-left: auto;
 }
 
 .brand small {
@@ -188,7 +193,7 @@ body {
 }
 
 .menu-secondary {
-  gap: 32px;
+  gap: 24px;
 }
 
 .search-link {
@@ -199,6 +204,7 @@ body {
   height: 40px;
   border-radius: 999px;
   text-decoration: none;
+  flex: 0 0 auto;
 }
 
 .search-icon {
@@ -647,6 +653,27 @@ body {
 .btn-orange {
   color: #fff;
   background: #d95a00;
+  white-space: nowrap;
+}
+
+@media (max-width: 1380px) {
+  .brand-logo {
+    width: 170px;
+    max-width: min(30vw, 170px);
+  }
+
+  .header-inline-nav .menu {
+    gap: 14px;
+  }
+
+  .header-inline-nav .menu a,
+  .header-inline-nav .dropdown-trigger {
+    font-size: 0.93rem;
+  }
+}
+
+.top-phone {
+  white-space: nowrap;
 }
 
 .hero-actions {
@@ -731,6 +758,11 @@ body {
     font-size: 0.92rem;
   }
 
+  .brand-logo {
+    width: 132px;
+    max-width: 38vw;
+  }
+
   .submenu {
     min-width: 300px;
   }
@@ -797,12 +829,9 @@ body {
     text-align: center;
   }
 
-  .brand-title {
-    font-size: 1.45rem;
-  }
-
-  .brand-subtitle {
-    font-size: 1rem;
+  .brand-logo {
+    width: 170px;
+    max-width: 72vw;
   }
 
   .whatsapp-float {
