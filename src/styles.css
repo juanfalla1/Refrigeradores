@@ -308,6 +308,92 @@ body {
   background: #eef9ff;
 }
 
+.works-showcase {
+  background: linear-gradient(160deg, #f8fdff, #ffffff 68%);
+}
+
+.works-head h2 {
+  margin: 0 0 8px;
+  color: #183f5c;
+}
+
+.works-head p {
+  margin: 0;
+  color: #4d6c80;
+}
+
+.works-carousel {
+  position: relative;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.works-frame {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #cfe4f3;
+  background: #fff;
+  box-shadow: 0 18px 34px rgba(20, 74, 110, 0.14);
+}
+
+.works-image {
+  width: 100%;
+  height: min(60vw, 560px);
+  object-fit: cover;
+  display: block;
+}
+
+.works-frame figcaption {
+  padding: 10px 14px;
+  font-weight: 700;
+  color: #215275;
+  background: #f2faff;
+}
+
+.works-nav {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: #0e76ae;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 10px 20px rgba(10, 75, 115, 0.25);
+}
+
+.works-nav:hover {
+  background: #0b689b;
+}
+
+.works-dots {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+}
+
+.works-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: #b7d6ea;
+  cursor: pointer;
+  padding: 0;
+}
+
+.works-dots .dot.active {
+  background: #1f79ad;
+  transform: scale(1.2);
+}
+
 .action-stack {
   display: grid;
   gap: 14px;
@@ -779,6 +865,10 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
+  .works-image {
+    height: 52vw;
+  }
+
   .contact-split {
     grid-template-columns: 1fr;
   }
@@ -813,6 +903,22 @@ body {
     overflow-x: auto;
     width: 100%;
     padding-bottom: 4px;
+  }
+
+  .works-carousel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .works-nav {
+    width: 100%;
+    border-radius: 12px;
+    height: 38px;
+  }
+
+  .works-image {
+    height: 58vw;
+    min-height: 240px;
   }
 
   .menu-secondary {

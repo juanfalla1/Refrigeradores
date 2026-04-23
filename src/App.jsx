@@ -5,6 +5,12 @@ import heroLeft from "../imagen del header.png";
 import heroRight from "../imagen 2.png";
 import faqBanner from "../Climafresco _ Installazione Condizionatore_files/Screenshot-2024-03-04-154334.png";
 
+const realWorksImages = Object.entries(
+  import.meta.glob("../Imagenes reales/*.jpeg", { eager: true, import: "default" })
+)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, src]) => src);
+
 function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [customizeOpen, setCustomizeOpen] = useState(false);
@@ -85,7 +91,10 @@ function CookieBanner() {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [workIndex, setWorkIndex] = useState(0);
   const dropdownRef = useRef(null);
+
+  const hasRealWorks = realWorksImages.length > 0;
 
   useEffect(() => {
     const onClickOutside = (event) => {
@@ -97,6 +106,24 @@ function App() {
     document.addEventListener("click", onClickOutside);
     return () => document.removeEventListener("click", onClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (realWorksImages.length < 2) return;
+
+    const sliderTimer = window.setInterval(() => {
+      setWorkIndex((prev) => (prev + 1) % realWorksImages.length);
+    }, 4200);
+
+    return () => window.clearInterval(sliderTimer);
+  }, []);
+
+  const showPreviousWork = () => {
+    setWorkIndex((prev) => (prev - 1 + realWorksImages.length) % realWorksImages.length);
+  };
+
+  const showNextWork = () => {
+    setWorkIndex((prev) => (prev + 1) % realWorksImages.length);
+  };
 
   return (
     <>
@@ -172,7 +199,62 @@ function App() {
           <a href="#climatizzatori" className="quick-link">Le nostre soluzioni</a>
           <a href="#auto-prenotazione" className="quick-link">Prenota sopralluogo</a>
           <a href="#auto-preventivo" className="quick-link">Preventivo online</a>
-          <a href="#video-sopralluogo" className="quick-link">Videochiamata</a>
+          <a href="#nostri-lavori" className="quick-link">I nostri lavori</a>
+        </section>
+
+        <section id="nostri-lavori" className="container section works-showcase">
+          <div className="works-head">
+            <p className="eyebrow">Alcuni dei nostri lavori</p>
+            <h2>Installazioni reali eseguite dal nostro team</h2>
+            <p>Selezione fotografica dei nostri interventi in abitazioni, uffici e attivita commerciali.</p>
+          </div>
+
+          {hasRealWorks ? (
+            <div className="works-carousel" role="region" aria-label="Galleria lavori reali">
+              <button
+                type="button"
+                className="works-nav works-prev"
+                onClick={showPreviousWork}
+                aria-label="Immagine precedente"
+              >
+                &lt;
+              </button>
+
+              <figure className="works-frame">
+                <img
+                  src={realWorksImages[workIndex]}
+                  alt={`Lavoro realizzato ${workIndex + 1}`}
+                  className="works-image"
+                />
+                <figcaption>{`Lavoro ${workIndex + 1} di ${realWorksImages.length}`}</figcaption>
+              </figure>
+
+              <button
+                type="button"
+                className="works-nav works-next"
+                onClick={showNextWork}
+                aria-label="Immagine successiva"
+              >
+                &gt;
+              </button>
+            </div>
+          ) : (
+            <p>Nessuna foto disponibile al momento.</p>
+          )}
+
+          {hasRealWorks ? (
+            <div className="works-dots" aria-label="Selezione immagini">
+              {realWorksImages.map((_, index) => (
+                <button
+                  type="button"
+                  key={`work-${index}`}
+                  className={`dot ${index === workIndex ? "active" : ""}`}
+                  onClick={() => setWorkIndex(index)}
+                  aria-label={`Vai al lavoro ${index + 1}`}
+                />
+              ))}
+            </div>
+          ) : null}
         </section>
 
         <section id="chi-siamo" className="container section">
