@@ -223,6 +223,12 @@ function App() {
               <figure className="works-frame">
                 <img
                   src={realWorksImages[workIndex]}
+                  alt=""
+                  aria-hidden="true"
+                  className="works-image-bg"
+                />
+                <img
+                  src={realWorksImages[workIndex]}
                   alt={`Lavoro realizzato ${workIndex + 1}`}
                   className="works-image"
                 />
