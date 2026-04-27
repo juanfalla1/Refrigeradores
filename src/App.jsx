@@ -191,10 +191,6 @@ function App() {
           </div>
         </section>
 
-        <section className="container section section-image-split" aria-label="Seconda immagine promozionale">
-          <img src={heroRight} alt="Promozione servizi Garcia Clima" className="hero-img hero-img-secondary" />
-        </section>
-
         <section className="container section quick-actions">
           <a href="#climatizzatori" className="quick-link">Le nostre soluzioni</a>
           <a href="#auto-prenotazione" className="quick-link">Prenota sopralluogo</a>
@@ -458,6 +454,10 @@ function App() {
               <p>Installatori abilitati con procedure di collaudo e verifica finale.</p>
             </article>
           </div>
+        </section>
+
+        <section className="container section section-image-split" aria-label="Seconda immagine promozionale">
+          <img src={heroRight} alt="Promozione servizi Garcia Clima" className="hero-img hero-img-secondary" />
         </section>
 
         <section id="contatti" className="container section cta-box">
